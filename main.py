@@ -1,3 +1,5 @@
+# pip instal recognize, SpeechRecognition, pyttsx3, requests, win10toast_persist, wikipedia
+
 import recognize
 import speech_recognition as sr
 import webbrowser
