@@ -1,0 +1,6 @@
+SpeechRecognition
+pyautogui
+pyttsx3
+requests
+win10toast-persist
+wikipedia
