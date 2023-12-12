@@ -1,13 +1,3 @@
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# ░╔████╗░░ ░╔██████ ░╔██████ ██╗░░░░╔██ ░╔██████ ███████████ ████████░ ██══╗░░░██ ███████████    #
-# ██╔═══██╗ ██╔════╝ ██╔════╝ ░░██╗╔██╔╝ ██╔════╝ ╚═══███╔══╝ ██════╗░░ ████╚═╗░██ ╚═══███╔══╝    #
-# ██║░░░██║ ░╚████╗░ ░╚████╗░ ░░░░██╔═╝░ ░╚████╗░ ░░░░███║░░░ ██████║░░ ██╔╗██║░██ ░░░░███║░░░    #
-# ████████║ ░░╚══╗██ ░░╚══╗██ ░░░░██║░░░ ░░╚══╗██ ░░░░███║░░░ ██╔═══╝░░ ██║║██║░██ ░░░░███║░░░    #
-# ██╔═══██║ ░░░░░║██ ░░░░░║██ ░░░░██║░░░ ░░░░░║██ ░░░░███║░░░ ██╚═════╗ ██║╚═╗████ ░░░░███║░░░    #
-# ██║░░░██║ ██████╔╝ ██████╔╝ ░░░░██║░░░ ██████╔╝ ░░░░███║░░░ ████████║ ██║░░╚═╗██ ░░░░███║░░░    #
-# ╚═╝░░░╚═╝ ╚═════╝░ ╚═════╝░ ░░░░╚═╝░░░ ╚═════╝░ ░░░░╚══╝░░░ ╚═══════╝ ╚═╝░░░░╚═╝ ░░░░╚══╝░░░2.0 #
- # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-
 import speech_recognition as sr
 import webbrowser
 import pyttsx3
@@ -20,8 +10,8 @@ import wikipedia
 import random
 import sys
 
-av = 0.5
-ar = 190
+from consts import av, ar, dowcipy, przywitania_lista, version, logo
+
 
 def assystent():
     engine = pyttsx3.init()
@@ -30,14 +20,6 @@ def assystent():
     engine.setProperty('gender', 'male')
 
     def opowiedz_dowcip():
-        dowcipy = [
-            "Dlaczego komputerowi nigdy nie jest zimno? Bo zawsze ma Windows!",
-            "Dlaczego książka nie umie być spokojna? Bo zawsze ma swoją stronę!",
-            "Co mówi książka do drugiej książki? Spotkamy się w bibliotece!",
-            "Dlaczego Python nie lubi kawy? Bo zawsze ma problem z Java!",
-            "Dlaczego niektóre programy nie idą na wakacje? Bo boją się błędów!",
-        ]
-
         dowcip = random.choice(dowcipy)
         print("Dowcip dnia:")
         print(dowcip)
@@ -45,7 +27,6 @@ def assystent():
         engine.runAndWait()
 
     while True:
-        przywitania_lista = ['cześć', 'hej', 'siema', 'hejo', 'doberek', 'dzień dobry', 'dobry']
         def recognize_speech(message='Powiedz coś'):
             recognizer = sr.Recognizer()
 
@@ -218,13 +199,7 @@ def assystent():
             opowiedz_dowcip()
 
 
-print('░╔████╗░░ ░╔██████ ░╔██████ ██╗░░░░╔██ ░╔██████ ███████████ ████████░ ██══╗░░░██ ███████████\n'
-      '██╔═══██╗ ██╔════╝ ██╔════╝ ░░██╗╔██╔╝ ██╔════╝ ╚═══███╔══╝ ██════╗░░ ████╚═╗░██ ╚═══███╔══╝\n'
-      '██║░░░██║ ░╚████╗░ ░╚████╗░ ░░░░██╔═╝░ ░╚████╗░ ░░░░███║░░░ ██████║░░ ██╔╗██║░██ ░░░░███║░░░\n'
-      '████████║ ░░╚══╗██ ░░╚══╗██ ░░░░██║░░░ ░░╚══╗██ ░░░░███║░░░ ██╔═══╝░░ ██║║██║░██ ░░░░███║░░░\n'
-      '██╔═══██║ ░░░░░║██ ░░░░░║██ ░░░░██║░░░ ░░░░░║██ ░░░░███║░░░ ██╚═════╗ ██║╚═╗████ ░░░░███║░░░\n'
-      '██║░░░██║ ██████╔╝ ██████╔╝ ░░░░██║░░░ ██████╔╝ ░░░░███║░░░ ████████║ ██║░░╚═╗██ ░░░░███║░░░\n'
-      '╚═╝░░░╚═╝ ╚═════╝░ ╚═════╝░ ░░░░╚═╝░░░ ╚═════╝░ ░░░░╚══╝░░░ ╚═══════╝ ╚═╝░░░░╚═╝ ░░░░╚══╝░░░2.0')
+print(f'{logo}{version}\n')
 
 aname = input('jakie chcesz nadać imie swojemu asystentowi(podaj małymi literami): ')
 
