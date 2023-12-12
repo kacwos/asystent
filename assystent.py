@@ -1,12 +1,12 @@
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# ░╔████╗░░ ░╔██████ ░╔██████ ██╗░░░░╔██ ░╔██████ ███████████ ████████░ ██══╗░░░██ ███████████ #
-# ██╔═══██╗ ██╔════╝ ██╔════╝ ░░██╗╔██╔╝ ██╔════╝ ╚═══███╔══╝ ██════╗░░ ████╚═╗░██ ╚═══███╔══╝ #
-# ██║░░░██║ ░╚████╗░ ░╚████╗░ ░░░░██╔═╝░ ░╚████╗░ ░░░░███║░░░ ██████║░░ ██╔╗██║░██ ░░░░███║░░░ #
-# ████████║ ░░╚══╗██ ░░╚══╗██ ░░░░██║░░░ ░░╚══╗██ ░░░░███║░░░ ██╔═══╝░░ ██║║██║░██ ░░░░███║░░░ #
-# ██╔═══██║ ░░░░░║██ ░░░░░║██ ░░░░██║░░░ ░░░░░║██ ░░░░███║░░░ ██╚═════╗ ██║╚═╗████ ░░░░███║░░░ #
-# ██║░░░██║ ██████╔╝ ██████╔╝ ░░░░██║░░░ ██████╔╝ ░░░░███║░░░ ████████║ ██║░░╚═╗██ ░░░░███║░░░ #
-# ╚═╝░░░╚═╝ ╚═════╝░ ╚═════╝░ ░░░░╚═╝░░░ ╚═════╝░ ░░░░╚══╝░░░ ╚═══════╝ ╚═╝░░░░╚═╝ ░░░░╚══╝░░░ #
- # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# ░╔████╗░░ ░╔██████ ░╔██████ ██╗░░░░╔██ ░╔██████ ███████████ ████████░ ██══╗░░░██ ███████████    #
+# ██╔═══██╗ ██╔════╝ ██╔════╝ ░░██╗╔██╔╝ ██╔════╝ ╚═══███╔══╝ ██════╗░░ ████╚═╗░██ ╚═══███╔══╝    #
+# ██║░░░██║ ░╚████╗░ ░╚████╗░ ░░░░██╔═╝░ ░╚████╗░ ░░░░███║░░░ ██████║░░ ██╔╗██║░██ ░░░░███║░░░    #
+# ████████║ ░░╚══╗██ ░░╚══╗██ ░░░░██║░░░ ░░╚══╗██ ░░░░███║░░░ ██╔═══╝░░ ██║║██║░██ ░░░░███║░░░    #
+# ██╔═══██║ ░░░░░║██ ░░░░░║██ ░░░░██║░░░ ░░░░░║██ ░░░░███║░░░ ██╚═════╗ ██║╚═╗████ ░░░░███║░░░    #
+# ██║░░░██║ ██████╔╝ ██████╔╝ ░░░░██║░░░ ██████╔╝ ░░░░███║░░░ ████████║ ██║░░╚═╗██ ░░░░███║░░░    #
+# ╚═╝░░░╚═╝ ╚═════╝░ ╚═════╝░ ░░░░╚═╝░░░ ╚═════╝░ ░░░░╚══╝░░░ ╚═══════╝ ╚═╝░░░░╚═╝ ░░░░╚══╝░░░2.0 #
+ # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 #############################################################################################
 # pip instal , SpeechRecognition, pyttsx3, requests, win10toast_persist, wikipedia #
@@ -17,18 +17,35 @@ import pyttsx3
 import subprocess
 import requests
 from win10toast_persist import ToastNotifier
-
+import pyautogui
 import time
 import wikipedia
 import random
 import sys
 
+av = 0.5
+ar = 190
 
 def assystent():
     engine = pyttsx3.init()
-    engine.setProperty('volume', 0.1)
-    engine.setProperty('rate', 190)
+    engine.setProperty('volume', av)
+    engine.setProperty('rate', ar)
     engine.setProperty('gender', 'male')
+
+    def opowiedz_dowcip():
+        dowcipy = [
+            "Dlaczego komputerowi nigdy nie jest zimno? Bo zawsze ma Windows!",
+            "Dlaczego książka nie umie być spokojna? Bo zawsze ma swoją stronę!",
+            "Co mówi książka do drugiej książki? Spotkamy się w bibliotece!",
+            "Dlaczego Python nie lubi kawy? Bo zawsze ma problem z Java!",
+            "Dlaczego niektóre programy nie idą na wakacje? Bo boją się błędów!",
+        ]
+
+        dowcip = random.choice(dowcipy)
+        print("Dowcip dnia:")
+        print(dowcip)
+        engine.say(dowcip)
+        engine.runAndWait()
 
     while True:
         przywitania_lista = ['cześć', 'hej', 'siema', 'hejo', 'doberek', 'dzień dobry', 'dobry']
@@ -63,10 +80,10 @@ def assystent():
                 if 'przeglądarkę' in text:
                     engine.say('Otwieram przeglądarkę')
                      # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-                    # musisz tu podać ścieżkę przeglądarki z jakiej będziesz korzystać                      #
+                    # musisz tu podać ścierzkę przeglądarki z jakiej będziesz korzystać                      #
                     # ja kożystam z opery wiec dałem operaGx_path w nazwie ścierzki ty możesz dać inną nazwe #
                     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-                    operaGx_path = r'' # musisz na koniec dodać .exe #
+                    operaGx_path = r'C:/Users/User/AppData/Local/Programs/Opera GX/launcher.exe'
                     try:
                         subprocess.Popen([operaGx_path, "http://www.google.com"])
                     except Exception as e:
@@ -104,6 +121,8 @@ def assystent():
                 elif 'github' in text:
                     engine.say('Otwieram github')
                     webbrowser.open("https://www.github.com")
+                else:
+                    print('nie znam takiej aplikacji')
         elif 'koniec' in text:
             sys.exit(0)
 
@@ -180,17 +199,39 @@ def assystent():
                 engine.say(przywitania_lista[6])
                 engine.runAndWait()
 
+        elif 'pisz' in text:
+            zdania = ' '.join(word_list[1:])
+            try:
+                time.sleep(5)
+                pyautogui.write(zdania, interval=0.05)
+            except Exception as e:
+                print('Nie można wykonać czynności. Błąd:', e)
+
+        elif 'licz' in text:
+            try:
+                wyrazenie = ' '.join(word_list[1:])
+                wynik = eval(wyrazenie)
+                engine.say(f'wynik to {wynik}')
+                engine.runAndWait()
+                print(f'wynik to {wynik}')
+            except Exception as e:
+                print('Błąd kalkulatora. Spróbuj ponownie. Błąd:', e)
+
+        elif 'opowiedz dowcip' in text:
+            opowiedz_dowcip()
+
+
 print('░╔████╗░░ ░╔██████ ░╔██████ ██╗░░░░╔██ ░╔██████ ███████████ ████████░ ██══╗░░░██ ███████████\n'
       '██╔═══██╗ ██╔════╝ ██╔════╝ ░░██╗╔██╔╝ ██╔════╝ ╚═══███╔══╝ ██════╗░░ ████╚═╗░██ ╚═══███╔══╝\n'
       '██║░░░██║ ░╚████╗░ ░╚████╗░ ░░░░██╔═╝░ ░╚████╗░ ░░░░███║░░░ ██████║░░ ██╔╗██║░██ ░░░░███║░░░\n'
       '████████║ ░░╚══╗██ ░░╚══╗██ ░░░░██║░░░ ░░╚══╗██ ░░░░███║░░░ ██╔═══╝░░ ██║║██║░██ ░░░░███║░░░\n'
       '██╔═══██║ ░░░░░║██ ░░░░░║██ ░░░░██║░░░ ░░░░░║██ ░░░░███║░░░ ██╚═════╗ ██║╚═╗████ ░░░░███║░░░\n'
       '██║░░░██║ ██████╔╝ ██████╔╝ ░░░░██║░░░ ██████╔╝ ░░░░███║░░░ ████████║ ██║░░╚═╗██ ░░░░███║░░░\n'
-      '╚═╝░░░╚═╝ ╚═════╝░ ╚═════╝░ ░░░░╚═╝░░░ ╚═════╝░ ░░░░╚══╝░░░ ╚═══════╝ ╚═╝░░░░╚═╝ ░░░░╚══╝░░░')
+      '╚═╝░░░╚═╝ ╚═════╝░ ╚═════╝░ ░░░░╚═╝░░░ ╚═════╝░ ░░░░╚══╝░░░ ╚═══════╝ ╚═╝░░░░╚═╝ ░░░░╚══╝░░░2.0')
 
 aname = input('jakie chcesz nadać imie swojemu asystentowi(podaj małymi literami): ')
 
-ioa = int(input('\nchcesz zobaczyć instrukcje(1) czy odrazu przejść do assystenta(2) wyjdź(3): '))
+ioa = int(input('\ninstrukcja(1) przejdź do assystenta(2) ustawienia(3) wyjdź(4): '))
 
 if ioa == 1:
     print(f'MOŻLIWOŚCI:\n'
@@ -210,7 +251,9 @@ if ioa == 1:
           '  =>Witanie się (powiedz siema/hej/cześć a assystent ci odpowie losowo wybranym przywitaniem)\n'
           '  =>Pogoda (powiedz "jaka jest pogoda" a wtedy w powiadomieniu przyjdzie ci temperatura, odczuwalna temp,'
           ' ciśnienie i wilgotność)\n'
-          '  =>artykuły z wikipedi (powiedz "pokaż mi artykuł <nazwa artykułu jaki chcesz przeczytać>")\n\n'
+          '  =>artykuły z wikipedi (powiedz "pokaż mi artykuł <nazwa artykułu jaki chcesz przeczytać>")\n'
+          '  =>pisanie z mowy (powiedz "pisz" i to co chcesz żeby assystent napisał a później przejdź do komunikatora i '
+          'naciśnij na miejsce do wpisywania textu)\n\n'
           'INSTRUKCJA:\n'
           '  =>musisz mówić tak jak jest podane w MOŻLIWOŚCIACH\n'
           '  =>masz 60 sekund na powiedzenie polecenia dla assystenta\n'
@@ -220,4 +263,26 @@ if ioa == 1:
 if ioa == 2:
     assystent()
 if ioa == 3:
+    print('ustawienia:\n (1)głośność\n (2)prędkość')
+    ua = int(input('co chcesz zmienić: '))
+    if ua == 1:
+        print('mozesz zmienić głośność od 0 do 10')
+        av = float(input('na jaką wartość chcesz zmienić głośność: '))
+        print(f'zmieniłeś głośność na {av}')
+        time.sleep(5)
+        assystent()
+    if ua == 2:
+        print('możesz zmieniać predkość od 100 do 500')
+        ar = float(input('na jaka wartość chcesz zmienić prędkość: '))
+        print(f'zmieniłeś prędkość na {ar}')
+        time.sleep(5)
+        assystent()
+    else:
+        print('zła odpowiedź assystent sie za 3 sekundy wyłączy')
+        time.sleep(3)
+if ioa == 4:
     sys.exit(0)
+
+else:
+    print('zła odpowiedź assystent sie za 3 sekundy wyłączy')
+    time.sleep(3)
