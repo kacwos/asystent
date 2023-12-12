@@ -22,3 +22,18 @@ logo = (
     '██║░░░██║ ██████╔╝ ██████╔╝ ░░░░██║░░░ ██████╔╝ ░░░░███║░░░ ████████║ ██║░░╚═╗██ ░░░░███║░░░\n'
     '╚═╝░░░╚═╝ ╚═════╝░ ╚═════╝░ ░░░░╚═╝░░░ ╚═════╝░ ░░░░╚══╝░░░ ╚═══════╝ ╚═╝░░░░╚═╝ ░░░░╚══╝░░░'
 )
+
+strony_lista = [
+    # Otwieranie {strona[0]} (powiedz {aname} otwórz/uruchom {strona[1]})
+    ['przegladarki', 'przeglądarkę', 'http://www.google.com'],
+    ['TikToka', 'tiktoka', 'https://www.tiktok.com'],
+    ['Netflixa', 'netflix', 'https://www.netflix.com'],
+    ['youtuba', 'youtube', 'https://www.youtube.com'],
+    ['githuba', 'github', 'https://www.github.com'],
+    ['replit', 'replit', 'https://www.replit.com'],
+    ['spotify', 'spotify', 'https://spotify.com'],
+    ['chatu GPT', ' czat gpt', 'https://www.chatGPT.com'],
+    ['discorda', 'discord', 'https://discord.com'],
+    ['twitcha', 'twitcha', 'https://www.twitch.com'],
+]
+

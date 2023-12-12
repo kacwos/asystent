@@ -10,7 +10,7 @@ import wikipedia
 import random
 import sys
 
-from consts import av, ar, dowcipy, przywitania_lista, version, logo
+from consts import av, ar, dowcipy, przywitania_lista, version, logo, strony_lista
 
 
 def assystent():
@@ -54,52 +54,14 @@ def assystent():
 
         if (aname in text and word_list[0] == aname):
             if ("otwórz" in text and word_list[1] == 'otwórz') or ("uruchom" in text and word_list[1] == 'uruchom'):
-
-                if 'przeglądarkę' in text:
-                    engine.say('Otwieram przeglądarkę')
-                     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-                    # musisz tu podać ścierzkę przeglądarki z jakiej będziesz korzystać                      #
-                    # ja kożystam z opery wiec dałem operaGx_path w nazwie ścierzki ty możesz dać inną nazwe #
-                    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-                    operaGx_path = r'C:/Users/User/AppData/Local/Programs/Opera GX/launcher.exe'
-                    try:
-                        subprocess.Popen([operaGx_path, "http://www.google.com"])
-                    except Exception as e:
-                        print("Błąd uruchamiania przeglądarki:", e)
-
-                elif 'discord' in text:
-                    engine.say('Otwieram Discord')
-                    webbrowser.open("https://discord.com")
-
-                elif 'spotify' in text:
-                    engine.say('Otwieram Spotify')
-                    webbrowser.open("https://spotify.com")
-
-                elif 'youtube' in text:
-                    engine.say('Otwieram YouTube')
-                    webbrowser.open("https://www.youtube.com")
-
-                elif 'netflix' in text:
-                    engine.say('Otwieram Netflix')
-                    webbrowser.open("https://www.netflix.com")
-
-                elif 'czat gpt' in text:
-                    engine.say('Otwieram chatGPT')
-                    webbrowser.open("https://www.chatGPT.com")
-
-                elif 'twitcha' in text:
-                    engine.say('Otwieram twitcha')
-                    webbrowser.open("https://www.twitch.com")
-                elif 'tiktoka' in text:
-                    engine.say('Otwieram tiktoka')
-                    webbrowser.open("https://www.tiktok.com")
-                elif 'replit' in text:
-                    engine.say('Otwieram replita')
-                    webbrowser.open("https://www.replit.com")
-                elif 'github' in text:
-                    engine.say('Otwieram github')
-                    webbrowser.open("https://www.github.com")
-                else:
+                czy_strona_obslugiwana = False
+                for strona in strony_lista:
+                    if strona[1] in text:
+                        czy_strona_obslugiwana = True
+                        engine.say(f'Otwieram {strona[1]}')
+                        webbrowser.open(strona[2])
+                        break
+                if not czy_strona_obslugiwana:
                     print('nie znam takiej aplikacji')
         elif 'koniec' in text:
             sys.exit(0)
@@ -153,29 +115,8 @@ def assystent():
                 print("Warunki nie zostały spełnione. Nie można kontynuować.")
 
         elif przywitania_lista[0] in text or przywitania_lista[1] in text or przywitania_lista[2] in text:
-            lp = random.randint(1, 7)
-
-            if lp == 1:
-                engine.say(przywitania_lista[0])
-                engine.runAndWait()
-            if lp == 2:
-                engine.say(przywitania_lista[1])
-                engine.runAndWait()
-            if lp == 3:
-                engine.say(przywitania_lista[2])
-                engine.runAndWait()
-            if lp == 4:
-                engine.say(przywitania_lista[3])
-                engine.runAndWait()
-            if lp == 5:
-                engine.say(przywitania_lista[4])
-                engine.runAndWait()
-            if lp == 6:
-                engine.say(przywitania_lista[5])
-                engine.runAndWait()
-            if lp == 7:
-                engine.say(przywitania_lista[6])
-                engine.runAndWait()
+            engine.say(random.choice(przywitania_lista))
+            engine.runAndWait()
 
         elif 'pisz' in text:
             zdania = ' '.join(word_list[1:])
@@ -201,23 +142,20 @@ def assystent():
 
 print(f'{logo}{version}\n')
 
-aname = input('jakie chcesz nadać imie swojemu asystentowi(podaj małymi literami): ')
+aname = input('Jakie chcesz nadać imię swojemu asystentowi: ').lower()
 
 ioa = int(input('\ninstrukcja(1) przejdź do assystenta(2) ustawienia(3) wyjdź(4): '))
 
 if ioa == 1:
+    def komunikat_z_lista_stron():
+        return ''.join(map(
+            lambda strona: f'  =>Otwieranie {strona[0]} (powiedz {aname} otwórz/uruchom {strona[1]})\n',
+            strony_lista
+        ))
+
     print(f'MOŻLIWOŚCI:\n'
-          f'Otwieranie stron w przeglądarce:\n'
-          f'  =>Otwieranie przegladarki (powiedz {aname} otwórz/uruchom przeglądarkę)\n'
-          f'  =>Otwieranie TikToka (powiedz {aname} otwórz/uruchom tiktoka)\n'
-          f'  =>Otwieranie Netflixa (powiedz {aname} otwórz/uruchom netflix)\n'
-          f'  =>Otwieranie youtuba (powiedz {aname} otwórz/uruchom youtube)\n'
-          f'  =>Otwieranie githuba (powiedz {aname} otwórz/uruchom github)\n'
-          f'  =>Otwieranie replit (powiedz {aname} otwórz/uruchom replit)\n'
-          f'  =>Otwieranie spotify (powiedz {aname} otwórz/uruchom spotify)\n'
-          f'  =>Otwieranie chatu GPT (powiedz {aname} otwórz/uruchom czat gpt)\n'
-          f'  =>Otwieranie discorda (powiedz {aname} otwórz/uruchom discord)\n'
-          f'  =>Otwieranie twitcha (powiedz {aname} otwórz/uruchom twitcha)\n'
+          f'Otwieranie stron w przeglądarce:\n' +
+          komunikat_z_lista_stron() +
           '  =>Wyjśćie z programu (powiedz "koniec")\n\n'
           'INNE możliwości:\n'
           '  =>Witanie się (powiedz siema/hej/cześć a assystent ci odpowie losowo wybranym przywitaniem)\n'
