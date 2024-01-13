@@ -9,8 +9,8 @@
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 #############################################################################################
-# pip instal , SpeechRecognition, pyttsx3, requests, win10toast_persist, wikipedia #
-############################################################################################
+# pip instal , SpeechRecognition, pyttsx3, requests, win10toast_persist, wikipedia, PyAudio #
+#############################################################################################
 import speech_recognition as sr
 import webbrowser
 import pyttsx3
