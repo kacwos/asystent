@@ -9,8 +9,8 @@
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 #############################################################################################
-# pip instal , SpeechRecognition, pyttsx3, requests, win10toast_persist, wikipedia, PyAudio #
-#############################################################################################
+# pip instal , SpeechRecognition, pyttsx3, requests, win10toast_persist, wikipedia #
+############################################################################################
 import speech_recognition as sr
 import webbrowser
 import pyttsx3
@@ -30,18 +30,18 @@ from mtranslate import translate
 av = 0.5
 ar = 190
 
-opowiedz_dowcip_komenda = [
+tell_joke_command = [
     'opowiedz dowcip',
     'opowiedz żart',
     'powiedz dowcip',
     'powiedz żart'
 ]
 
-def data_i_czas():
+def date_and_time():
     current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"Aktualna godzina: {current_time}")
 
-def zegar():
+def clock():
     def update_clock():
         ora_curenta = time.strftime('%H:%M:%S')
         ceas.config(text=ora_curenta)
@@ -290,10 +290,10 @@ def assistant():
             except Exception as e:
                 print('Błąd kalkulatora. Spróbuj ponownie. Błąd:', e)
 
-        elif (opowiedz_dowcip_komenda[0] in text or
-              opowiedz_dowcip_komenda[1] in text or
-              opowiedz_dowcip_komenda[2] in text or
-              opowiedz_dowcip_komenda[3] in text):
+        elif (tell_joke_command[0] in text or
+              tell_joke_command[1] in text or
+              tell_joke_command[2] in text or
+              tell_joke_command[3] in text):
             tell_joke()
 
         elif 'dodaj notatkę' in text:
@@ -307,10 +307,10 @@ def assistant():
             read_notes()
 
         elif 'data i czas' in text:
-            data_i_czas()
+            date_and_time()
 
         elif 'zegar' in text:
-            zegar()
+            clock()
 
         elif 'tłumacz' in text:
             translated_text = translate_text(word_list, target_language='en')
@@ -321,11 +321,8 @@ def assistant():
 def end():
     sys.exit(0)
 
-def assystent():
+def assistent_function():
     assistant()
-
-def koniec():
-    sys.exit(0)
 
 def info():
     messagebox.showinfo("Instrukcja", '''
@@ -365,7 +362,7 @@ def info():
          =>to co mówisz i to co ci odpowie assystent wyświetla się w terminalu
     ''')
     time.sleep(30)
-    assystent()
+    assistent_function()
 
 aapp = tk.Tk()
 aapp.title('assystent')
@@ -384,13 +381,13 @@ logo.pack()
 aname = tk.Entry()
 aname.pack()
 
-astntb = tk.Button(text='assystent', command=assystent)
+astntb = tk.Button(text='assystent', command=assistent_function())
 astntb.pack()
 
 infob = tk.Button(text='informacje/instrukcja', command=info)
 infob.pack()
 
-endb = tk.Button(text='koniec', command=koniec)
+endb = tk.Button(text='koniec', command=end)
 endb.pack()
 
 aapp.mainloop()
