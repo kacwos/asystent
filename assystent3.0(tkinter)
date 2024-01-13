@@ -138,9 +138,8 @@ def assistant():
                 if 'przeglądarkę' in text:
                     engine.say('Otwieram przeglądarkę')
                     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-                    # Musisz tu podać ścieżkę przeglądarki z jakiej będziesz korzystać                      #
-                    # Ja korzystam z Opery, więc podałem operaGx_path w nazwie ścieżki, ale możesz dać inną #
-                    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+                    # Musisz tu podać ścieżkę przeglądarki z jakiej będziesz korzystać                      # 
+                    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
                     operaGx_path = r''
                     try:
                         subprocess.Popen([operaGx_path, "http://www.google.com"])
