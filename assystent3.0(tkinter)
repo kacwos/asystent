@@ -159,7 +159,7 @@ def assistant():
                 api_key = f.read().strip()
 
             base_url = 'https://api.openweathermap.org/data/2.5/weather?q='
-            city = 'Lublin'
+            city = 'Warszawa'
             complete_url = f'{base_url}{city}&appid={api_key}'
 
             try:
