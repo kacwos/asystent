@@ -202,29 +202,7 @@ def assistant():
                 print("Warunki nie zostały spełnione. Nie można kontynuować.")
 
         elif greetings_list[0] in text or greetings_list[1] in text or greetings_list[2] in text:
-            lp = random.randint(1, 7)
-
-            if lp == 1:
-                engine.say(greetings_list[0])
-                engine.runAndWait()
-            if lp == 2:
-                engine.say(greetings_list[1])
-                engine.runAndWait()
-            if lp == 3:
-                engine.say(greetings_list[2])
-                engine.runAndWait()
-            if lp == 4:
-                engine.say(greetings_list[3])
-                engine.runAndWait()
-            if lp == 5:
-                engine.say(greetings_list[4])
-                engine.runAndWait()
-            if lp == 6:
-                engine.say(greetings_list[5])
-                engine.runAndWait()
-            if lp == 7:
-                engine.say(greetings_list[6])
-                engine.runAndWait()
+            engine.say(greetings_list[random.randint(0, 6)])
 
         elif 'pisz' in text:
             sentences = ' '.join(word_list[1:])
