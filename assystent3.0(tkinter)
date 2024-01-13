@@ -141,58 +141,13 @@ def assistant():
                     # Musisz tu podać ścieżkę przeglądarki z jakiej będziesz korzystać                      #
                     # Ja korzystam z Opery, więc podałem operaGx_path w nazwie ścieżki, ale możesz dać inną #
                     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-                    operaGx_path = r'C:/Users/User/AppData/Local/Programs/Opera GX/launcher.exe'
+                    operaGx_path = r''
                     try:
                         subprocess.Popen([operaGx_path, "http://www.google.com"])
                     except Exception as e:
                         print("Błąd uruchamiania przeglądarki:", e)
 
-                elif 'discord' in text:
-                    engine.say('Otwieram Discord')
-                    webbrowser.open("https://discord.com")
-
-                elif 'spotify' in text:
-                    engine.say('Otwieram Spotify')
-                    webbrowser.open("https://spotify.com")
-
-                elif 'youtube' in text:
-                    engine.say('Otwieram YouTube')
-                    webbrowser.open("https://www.youtube.com")
-                    if 'tytuł' in text:
-                        title = ' '.join(word_list[4:])
-                        try:
-                            time.sleep(6)
-                            pyautogui.click(700, 100)
-                            pyautogui.write(title, interval=0.1)
-                            pyautogui.press('ENTER')
-                        except:
-                            print('Coś poszło nie tak')
-
-                elif 'netflix' in text:
-                    engine.say('Otwieram Netflix')
-                    webbrowser.open("https://www.netflix.com")
-
-                elif 'czat gpt' in text:
-                    engine.say('Otwieram chatGPT')
-                    webbrowser.open("https://www.chatGPT.com")
-
-                elif 'twitcha' in text:
-                    engine.say('Otwieram Twitcha')
-                    webbrowser.open("https://www.twitch.com")
-
-                elif 'tiktoka' in text:
-                    engine.say('Otwieram TikToka')
-                    webbrowser.open("https://www.tiktok.com")
-
-                elif 'replit' in text:
-                    engine.say('Otwieram Replita')
-                    webbrowser.open("https://www.replit.com")
-
-                elif 'github' in text:
-                    engine.say('Otwieram GitHub')
-                    webbrowser.open("https://www.github.com")
-
-                else:
+                else:                
                     app_name = ' '.join(word_list[2:])
                     engine.say(f'Otwieram {app_name}')
                     webbrowser.open(f'https://www.{app_name}.com')
