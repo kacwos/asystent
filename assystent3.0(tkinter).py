@@ -140,7 +140,7 @@ def assistant():
                     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
                     # Musisz tu podać ścieżkę przeglądarki z jakiej będziesz korzystać                      # 
                     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-                    operaGx_path = r''
+                    operaGx_path = r'.exe'
                     try:
                         subprocess.Popen([operaGx_path, "http://www.google.com"])
                     except Exception as e:
