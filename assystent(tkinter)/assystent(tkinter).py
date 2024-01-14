@@ -149,7 +149,7 @@ def assistant():
                     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
                     # Musisz tu podać ścieżkę przeglądarki z jakiej będziesz korzystać                      #
                     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-                    operaGx_path = r'C:/Users/User/AppData/Local/Programs/Opera GX/launcher.exe'
+                    operaGx_path = r''
                     try:
                         subprocess.Popen([operaGx_path, "http://www.google.com"])
                     except Exception as e:
