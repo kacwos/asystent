@@ -62,9 +62,8 @@ def assystent():
 
                 if 'przeglądarkę' in text:
                     engine.say('Otwieram przeglądarkę')
-                     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-                    # musisz tu podać ścieżkę przeglądarki z jakiej będziesz korzystać                      #
-                    # ja kożystam z opery wiec dałem operaGx_path w nazwie ścierzki ty możesz dać inną nazwe #
+                     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+                    # musisz tu podać ścieżkę przeglądarki z jakiej będziesz korzystać                      # 
                     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
                     operaGx_path = r'' # musisz na koniec dodać .exe #
                     try:
