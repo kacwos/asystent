@@ -137,9 +137,8 @@ def assystent():
                     engine.say('Otwieram przeglądarkę')
                      # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
                     # musisz tu podać ścierzkę przeglądarki z jakiej będziesz korzystać                      #
-                    # ja kożystam z opery wiec dałem operaGx_path w nazwie ścierzki ty możesz dać inną nazwe #
                     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-                    operaGx_path = r'C:/Users/User/AppData/Local/Programs/Opera GX/launcher.exe'
+                    operaGx_path = r'.exe'
                     try:
                         subprocess.Popen([operaGx_path, "http://www.google.com"])
                     except Exception as e:
@@ -199,7 +198,7 @@ def assystent():
                 api_key = f.read().strip()
 
             base_url = 'https://api.openweathermap.org/data/2.5/weather?q='
-            city = 'Lublin'
+            city = 'Warszawa'
             complete_url = f'{base_url}{city}&appid={api_key}'
 
             try:
