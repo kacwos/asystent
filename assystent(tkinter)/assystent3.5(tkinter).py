@@ -11,20 +11,10 @@
 #############################################################################################
 # pip instal , SpeechRecognition, pyttsx3, requests, win10toast_persist, wikipedia #
 ############################################################################################
-import speech_recognition as sr
-import webbrowser
-import pyttsx3
-import subprocess
-import requests
-from win10toast import ToastNotifier
-import pyautogui
-import time
-import wikipedia
-import random
-import sys
-import datetime
+import webbrowser, pyttsx3, subprocess, requests, pyautogui, time, wikipedia, random, sys, datetime, ctypes
 import tkinter as tk
-import ctypes
+import speech_recognition as sr
+from win10toast import ToastNotifier
 from tkinter import messagebox
 from mtranslate import translate
 
