@@ -124,4 +124,4 @@ Jezeli masz jakieś problemy w odpaleniu programu, w tym jak działa, problem w 
 
 Po wejściu na serwer z potrzebą pomocy w programie przejdź na kategorię programowanie => pomoc => napisz `"rudydwa2"` i napisz swój problem
 
-Na serwer mozęsz tez wejść popisać i pogadać z innymi nie tylko prosić o pomoc ponieważ jest to serwer żeby popisać z innymi i kogoś poznać
+Na serwer możesz tez wejść popisać i pogadać z innymi nie tylko prosić o pomoc ponieważ jest to serwer żeby popisać z innymi i kogoś poznać
