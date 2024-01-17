@@ -6,7 +6,7 @@ Assystent to asystent głosowy z nie wielką ilością możliwości (jak na ten 
 
 Jest on zrobiony w pythonie. Nie jest on idealny ponieważ nie jest on przystosowany do preferencji wszystkich i nie ma on wszystkich funkcji które potrzebowały by poszczególne osoby.
 
-Assystent jest prostym programem z wieloma wersjami o różnych ilościach funkcji i od wersji zależy też jak będą działać **np.** wersję z dopiską `(tkinter)` działają w oddzielnym okienku, a bez tej dopiski działają w terminalu
+Assystent jest prostym programem z wieloma wersjami o różnych ilościach funkcji i od wersji zależy też jak będzie działać **np.** wersję z dopiską `(tkinter)` działają w oddzielnym okienku, a bez tej dopiski działają w terminalu
 
 ## Wersja z dopiską `tkinter`
 >Odpala się w oddzielnym okienku
