@@ -139,7 +139,7 @@ def assistant():
                     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
                     # Musisz tu podać ścieżkę przeglądarki z jakiej będziesz korzystać                      #
                     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-                    operaGx_path = r'.exe'
+                    operaGx_path = r'.exe'#<=======o tu przed .exe musisz dać tą śieżkę
                     try:
                         subprocess.Popen([operaGx_path, "http://www.google.com"])
                     except Exception as e:
@@ -289,17 +289,7 @@ def assistent_function():
 def info():
     messagebox.showinfo("Instrukcja", '''
         MOŻLIWOŚCI:\n'
-         =>Otwieranie stron w przeglądarce:'
-         =>Otwieranie przegladarki (powiedz imię asystenta otwórz/uruchom przeglądarkę)
-         =>Otwieranie TikToka (powiedz imię asystenta otwórz/uruchom tiktoka)
-         =>Otwieranie Netflixa (powiedz imię asystenta otwórz/uruchom netflix)
-         =>Otwieranie youtuba (powiedz imię asystenta otwórz/uruchom youtube, możesz też dodać "tytuł" i powiedzieć a {aname} wpisze w wyszukiwarce tytuł który powiedziałeś)
-         =>Otwieranie githuba (powiedz imię asystenta otwórz/uruchom github)
-         =>Otwieranie replit (powiedz imię asystenta otwórz/uruchom replit)
-         =>Otwieranie spotify (powiedz imię asystenta otwórz/uruchom spotify)
-         =>Otwieranie chatu GPT (powiedz imię asystenta otwórz/uruchom czat gpt)
-         =>Otwieranie discorda (powiedz imię asystenta otwórz/uruchom discord)
-         =>Otwieranie twitcha (powiedz imię asystenta otwórz/uruchom twitcha)
+         =>Otwieranie przeglądarki(powiedz imię asystenta, otwórz/uruchom i powiedz przeglądarkę)
          =>Otwieranie dowolnej strony (poweidz imię asystenta i stronę jaką chcesz otworzyć)
          =>Wyjśćie z programu (powiedz imię asystenta i dodaj "koniec")
        INNE możliwości:
