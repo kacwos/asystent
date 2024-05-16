@@ -144,6 +144,19 @@ def assistant():
                         subprocess.Popen([operaGx_path, "http://www.google.com"])
                     except Exception as e:
                         print("Błąd uruchamiania przeglądarki:", e)
+                     
+                elif 'youtube' in text:
+                    engine.say('Otwieram YouTube')
+                    webbrowser.open("https://www.youtube.com")
+                    if 'tytuł' in text:
+                        tytul = ' '.join(word_list[4:])
+                        try:
+                            time.sleep(8)
+                            pyautogui.click(700, 120)
+                            pyautogui.write(tytul, interval=0.1)
+                            pyautogui.press('ENTER')
+                        except:
+                            print('coś nie pykło')
 
                 else:
                     app_name = ' '.join(word_list[2:])
