@@ -18,6 +18,10 @@ from win10toast import ToastNotifier
 from tkinter import messagebox
 from mtranslate import translate
 
+# podstawowe ustawienia assystenta
+av = 0.5
+ar = 190
+
 def assistant():
     global aname, av, ar
     engine = pyttsx3.init()
@@ -27,10 +31,6 @@ def assistant():
 
     # lista powitań
     greetings_list = ['cześć', 'hej', 'siema', 'hejo', 'doberek', 'dzień dobry', 'dobry']
-
-    # podstawowe ustawienia assystenta
-    av = 0.5
-    ar = 190
 
     # komendy aby assystent powiedział żart
     tell_joke_command = [
